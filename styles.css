@@ -336,15 +336,24 @@ section.paper-section {
 
 #avatar-canvas {
   position: absolute;
-  right: 10%;
-  top: 20%;
-  width: 300px;
-  height: 400px;
+  right: 0;
+  top: 5%;
+  width: 60%;
+  height: 90%;
+  pointer-events: none;
+  z-index: 15;
 }
 
 /* ===================================
    RESPONSIVE
    =================================== */
+
+@media (max-width: 1024px) {
+  #avatar-canvas {
+    width: 50%;
+    right: -5%;
+  }
+}
 
 @media (max-width: 768px) {
   h1 {
