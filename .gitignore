@@ -1,0 +1,7 @@
+*.mov
+*.mp4
+*.webp
+*.png
+.DS_Store
+node_modules/
+.gemini/

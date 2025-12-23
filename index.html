@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jitesh – Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- CRT Overlay for Hero -->
+  <div class="crt-overlay"></div>
+
+  <!-- Fixed UI Elements (Blend Mode for Color Flipping) -->
+  <div class="fixed-ui" id="menuToggleContainer">
+    <button id="menuToggle">MENU</button>
+  </div>
+
+  <div class="fixed-ui social-sidebar">
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+    <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+      <a href="#linkedin">IN</a>
+      <a href="#github">GH</a>
+      <a href="#bluesky">BS</a>
+    </div>
+  </div>
+
+  <!-- Menu Overlay v2 -->
+  <div id="menuOverlay" class="menu-overlay">
+    <div class="menu-content">
+      <button id="closeMenu">CLOSE [X]</button>
+      <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hero Section (Sticky) -->
+  <section id="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-sub" id="hero-greeting">Hi there.</div>
+      <h1 id="hero-name">I'm Jitesh</h1>
+      <div class="pixel-text" id="hero-role">
+        ■ Software Engineer<br>
+        ■ Digital Designer
+      </div>
+      <div class="terminal-line" id="hero-status">
+        Welcome to J-Linux 1.0 LTS<br>
+        >> Scroll to explore
+      </div>
+    </div>
+    <!-- Dot Matrix Avatar Placeholder -->
+    <canvas id="avatar-canvas"></canvas>
+  </section>
+
+  <!-- Content (Paper) Section -->
+  <main id="content">
+    <div class="container">
+
+      <section id="about" class="paper-section">
+        <h2>Hi there</h2>
+        <div class="paper-text">
+          My name is Jitesh. I'm a full stack developer and digital designer obsessed with creating refined digital
+          experiences.
+          I have a passion for blending high-end engineering with pixel-perfect design aesthetics.
+        </div>
+        <div class="paper-text">
+          This website is a tribute to retro computing, inspired by the Commodore PET era, reflecting my love for tech
+          history and modern web capabilities.
+        </div>
+      </section>
+
+      <section id="projects" class="paper-section">
+        <h2>Projects</h2>
+
+        <div class="project-entry">
+          <div class="project-title">TaskFlow Pro</div>
+          <div class="project-year">2024</div>
+          <div class="project-tags">
+            <span>TypeScript</span> <span>React</span> <span>Node.js</span>
+          </div>
+          <p class="paper-text">
+            A modern project management platform with AI-powered task prioritization. Over 500 active users.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">DesignHub</div>
+          <div class="project-year">2023-24</div>
+          <div class="project-tags">
+            <span>Next.js</span> <span>Figma API</span> <span>Tailwind</span>
+          </div>
+          <p class="paper-text">
+            Collaborative design system management tool bridging the gap between designers and developers.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">CodeSnap</div>
+          <div class="project-year">2023</div>
+          <div class="project-tags">
+            <span>Vue.js</span> <span>Python</span> <span>FastAPI</span>
+          </div>
+          <p class="paper-text">
+            An intelligent code snippet manager with AI-powered search and categorization.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">CloudSync Dashboard</div>
+          <div class="project-year">2022-23</div>
+          <div class="project-tags">
+            <span>React</span> <span>AWS</span> <span>Docker</span>
+          </div>
+          <p class="paper-text">
+            Comprehensive cloud infrastructure monitoring dashboard for AWS services.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">Portfolio Builder</div>
+          <div class="project-year">2022</div>
+          <div class="project-tags">
+            <span>Svelte</span> <span>TypeScript</span> <span>Netlify</span>
+          </div>
+          <p class="paper-text">
+            A drag-and-drop portfolio website builder for developers and designers.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">API Gateway</div>
+          <div class="project-year">2021-22</div>
+          <div class="project-tags">
+            <span>Go</span> <span>Redis</span> <span>GraphQL</span>
+          </div>
+          <p class="paper-text">
+            High-performance API gateway built with Go, featuring rate limiting and caching.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">ChatBot Framework</div>
+          <div class="project-year">2021</div>
+          <div class="project-tags">
+            <span>Python</span> <span>NLP</span> <span>TensorFlow</span>
+          </div>
+          <p class="paper-text">
+            Extensible chatbot framework with natural language processing capabilities.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">E-Commerce Platform</div>
+          <div class="project-year">2020-21</div>
+          <div class="project-tags">
+            <span>React</span> <span>Node.js</span> <span>MongoDB</span>
+          </div>
+          <p class="paper-text">
+            Full-featured e-commerce platform with shopping cart and payment processing.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">Weather Analytics</div>
+          <div class="project-year">2020</div>
+          <div class="project-tags">
+            <span>D3.js</span> <span>Flask</span> <span>Data Viz</span>
+          </div>
+          <p class="paper-text">
+            Interactive weather data visualization dashboard using D3.js.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">DevTools Extension</div>
+          <div class="project-year">2019-20</div>
+          <div class="project-tags">
+            <span>JavaScript</span> <span>Chrome API</span>
+          </div>
+          <p class="paper-text">
+            Browser extension enhancing Chrome DevTools with debugging and profiling tools.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">Mobile Fitness App</div>
+          <div class="project-year">2019</div>
+          <div class="project-tags">
+            <span>React Native</span> <span>Firebase</span>
+          </div>
+          <p class="paper-text">
+            Cross-platform fitness tracking app with workout logging and progress tracking.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">Blog CMS</div>
+          <div class="project-year">2018-19</div>
+          <div class="project-tags">
+            <span>PHP</span> <span>Laravel</span> <span>MySQL</span>
+          </div>
+          <p class="paper-text">
+            Custom content management system for bloggers with markdown support.
+          </p>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-title">Task Automation Tool</div>
+          <div class="project-year">2017-18</div>
+          <div class="project-tags">
+            <span>Python</span> <span>Selenium</span> <span>Automation</span>
+          </div>
+          <p class="paper-text">
+            Python-based automation tool for repetitive web tasks.
+          </p>
+        </div>
+
+        <div class="paper-text" style="font-family: var(--font-pixel); font-size: 0.8rem; margin-top: 4rem;">
+          ...and many more pieces of personal and professional work.
+        </div>
+      </section>
+
+      <section id="contact" class="paper-section">
+        <h2>Contact</h2>
+        <div class="paper-text">
+          Reach out on <a href="https://linkedin.com">LinkedIn</a>.
+        </div>
+      </section>
+
+      <footer style="margin-top: 8rem; padding-bottom: 2rem; font-size: 0.8rem; opacity: 0.6;">
+        Computer design based on the Commodore PET 8296.<br>
+        COPYRIGHT © 2025 Jitesh.
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

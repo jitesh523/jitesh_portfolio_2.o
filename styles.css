@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;700&display=swap');
+
+/* ===================================
+   V2 DESIGN SYSTEM - 1:1 REPLICA
+   =================================== */
+
+:root {
+  /* Theme 1: CRT (Dark/Amber) */
+  --crt-bg: #000000;
+  --crt-amber: #f6d4b1;
+  --crt-amber-glow: rgba(246, 212, 177, 0.4);
+
+  /* Theme 2: Paper (Light/Documentation) */
+  --paper-bg: #f6d4b1;
+  --paper-text: #000000;
+  --paper-accent: #000000;
+
+  /* Fonts */
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-body: 'Inter', -apple-system, sans-serif;
+}
+
+/* ===================================
+   RESET & LAYOUT
+   =================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--paper-bg);
+  color: var(--paper-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ===================================
+   THEMATIC SCROLL (Sticky Hero Reveal)
+   =================================== */
+
+#hero {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--crt-bg);
+  color: var(--crt-amber);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  z-index: 20;
+}
+
+main#content {
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  padding-top: 100vh;
+  background-color: var(--paper-bg);
+}
+
+/* ===================================
+   CRT EFFECTS
+   =================================== */
+
+.crt-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+}
+
+.crt-overlay::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 31;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+.crt-overlay::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 32;
+  pointer-events: none;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.97;
+  }
+
+  5% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  15% {
+    opacity: 0.95;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.95;
+  }
+
+  30% {
+    opacity: 1;
+  }
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+
+h1,
+.pixel-text {
+  font-family: var(--font-pixel);
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 8px var(--crt-amber-glow);
+}
+
+.hero-sub {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  color: var(--crt-amber);
+  margin-bottom: 1rem;
+}
+
+.terminal-line {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  color: var(--crt-amber);
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* ===================================
+   CONTENT (PAPER) STYLING
+   =================================== */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+section.paper-section {
+  border-top: 1px dotted #000;
+  padding: 4rem 0;
+}
+
+.paper-section h2 {
+  font-family: var(--font-pixel);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
+.paper-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.project-entry {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dotted #ccc;
+}
+
+.project-entry:last-child {
+  border-bottom: none;
+}
+
+.project-title {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-year {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  margin-bottom: 1rem;
+}
+
+.project-tags span {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  margin-right: 1rem;
+}
+
+/* ===================================
+   DYNAMIC UI ELEMENTS
+   =================================== */
+
+.fixed-ui {
+  position: fixed;
+  z-index: 100;
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+#menuToggle {
+  top: 2rem;
+  left: 2rem;
+  background: none;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: inherit;
+  pointer-events: auto;
+}
+
+.social-sidebar {
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: right;
+  pointer-events: auto;
+}
+
+.social-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+}
+
+/* Menu Overlay v2 */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  color: var(--crt-amber);
+}
+
+.menu-overlay.active {
+  transform: translateX(0);
+}
+
+.menu-content {
+  text-align: center;
+}
+
+.menu-content nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menu-content a {
+  font-family: var(--font-pixel);
+  font-size: 2rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+#closeMenu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: 1px solid var(--crt-amber);
+  color: var(--crt-amber);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-pixel);
+  cursor: pointer;
+}
+
+/* ===================================
+   CANVAS / DOT MATRIX
+   =================================== */
+
+#avatar-canvas {
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  width: 300px;
+  height: 400px;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content {
+    width: 85%;
+  }
+
+  #avatar-canvas {
+    display: none;
+  }
+
+  .menu-content a {
+    font-size: 1.2rem;
+  }
+}
